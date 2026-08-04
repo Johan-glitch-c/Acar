@@ -2,312 +2,194 @@
 
 {% load static %}
 
+
+
 {% block content %}
-<main>
-    <section id="home" class="hero">
+{%include 'carusel.html'%}
+<!-- ========================= -->
+<!-- УСЛУГИ -->
+<!-- ========================= -->
 
-        <div class="slider">
+<section id="services" class="services">
 
-            <div class="slide active">
+    <div class="container">
 
-                <img src="images/slide1.jpg" alt="">
+        <div class="section-title">
 
-                <div class="overlay"></div>
+            <h2>Наши услуги</h2>
 
-                <div class="content">
+            <p>
+                Выберите подходящую услугу. Стоимость рассчитывается индивидуально в зависимости от сложности
+                проекта.
+            </p>
 
-                    <h1>
-                        Качественные услуги для вашего бизнеса
-                    </h1>
+        </div>
 
-                    <p>
+        <div class="services-grid">
 
-                        Мы работаем быстро, профессионально
-                        и всегда ориентируемся на клиента.
+            <div class="service-card">
 
-                    </p>
+                <i class="fa-solid fa-laptop-code"></i>
 
-                    <a href="#contact" class="btn">
-                        Оставить заявку
-                    </a>
+                <h3>Услуга №1</h3>
 
-                </div>
+                <p>
+                    Краткое описание вашей услуги. Здесь можно написать 2–3 предложения.
+                </p>
 
-            </div>
-
-            <div class="slide">
-
-                <img src="images/slide2.jpg" alt="">
-
-                <div class="overlay"></div>
-
-                <div class="content">
-
-                    <h1>
-
-                        Современный подход
-
-                    </h1>
-
-                    <p>
-
-                        Используем современные технологии
-                        и лучшие решения.
-
-                    </p>
-
-                    <a href="#services" class="btn">
-
-                        Наши услуги
-
-                    </a>
-
-                </div>
+                <span class="price">
+                    от 100 ₼
+                </span>
 
             </div>
 
-            <div class="slide">
+            <div class="service-card">
 
-                <img src="images/slide3.jpg" alt="">
+                <i class="fa-solid fa-gear"></i>
 
-                <div class="overlay"></div>
+                <h3>Услуга №2</h3>
 
-                <div class="content">
+                <p>
+                    Краткое описание вашей услуги. Здесь можно написать преимущества.
+                </p>
 
-                    <h1>
-
-                        Доверьтесь профессионалам
-
-                    </h1>
-
-                    <p>
-
-                        Более 100 довольных клиентов.
-
-                    </p>
-
-                    <a href="#contact" class="btn">
-
-                        Связаться
-
-                    </a>
-
-                </div>
+                <span class="price">
+                    от 150 ₼
+                </span>
 
             </div>
 
-            <button class="prev">
+            <div class="service-card">
 
-                <i class="fa-solid fa-chevron-left"></i>
+                <i class="fa-solid fa-chart-line"></i>
 
-            </button>
+                <h3>Услуга №3</h3>
 
-            <button class="next">
+                <p>
+                    Краткое описание вашей услуги. Здесь можно указать сроки выполнения.
+                </p>
 
-                <i class="fa-solid fa-chevron-right"></i>
-
-            </button>
-
-            <div class="dots">
-
-                <span class="dot active"></span>
-
-                <span class="dot"></span>
-
-                <span class="dot"></span>
+                <span class="price">
+                    от 250 ₼
+                </span>
 
             </div>
 
         </div>
 
-    </section>
+    </div>
 
+</section>
 
+<!-- ========================= -->
+<!-- ПРЕИМУЩЕСТВА -->
+<!-- ========================= -->
 
-    <!-- ========================= -->
-    <!-- УСЛУГИ -->
-    <!-- ========================= -->
+<section class="advantages">
 
-    <section id="services" class="services">
+    <div class="container">
 
-        <div class="container">
+        <div class="section-title">
 
-            <div class="section-title">
+            <h2>Почему выбирают нас</h2>
 
-                <h2>Наши услуги</h2>
+        </div>
+
+        <div class="advantages-grid">
+
+            <div class="advantage">
+
+                <i class="fa-solid fa-clock"></i>
+
+                <h3>Быстро</h3>
 
                 <p>
-                    Выберите подходящую услугу. Стоимость рассчитывается индивидуально в зависимости от сложности
-                    проекта.
+                    Выполняем работу точно в срок.
                 </p>
 
             </div>
 
-            <div class="services-grid">
+            <div class="advantage">
 
-                <div class="service-card">
+                <i class="fa-solid fa-shield"></i>
 
-                    <i class="fa-solid fa-laptop-code"></i>
-
-                    <h3>Услуга №1</h3>
-
-                    <p>
-                        Краткое описание вашей услуги. Здесь можно написать 2–3 предложения.
-                    </p>
-
-                    <span class="price">
-                        от 100 ₼
-                    </span>
-
-                </div>
-
-                <div class="service-card">
-
-                    <i class="fa-solid fa-gear"></i>
-
-                    <h3>Услуга №2</h3>
-
-                    <p>
-                        Краткое описание вашей услуги. Здесь можно написать преимущества.
-                    </p>
-
-                    <span class="price">
-                        от 150 ₼
-                    </span>
-
-                </div>
-
-                <div class="service-card">
-
-                    <i class="fa-solid fa-chart-line"></i>
-
-                    <h3>Услуга №3</h3>
-
-                    <p>
-                        Краткое описание вашей услуги. Здесь можно указать сроки выполнения.
-                    </p>
-
-                    <span class="price">
-                        от 250 ₼
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ========================= -->
-    <!-- ПРЕИМУЩЕСТВА -->
-    <!-- ========================= -->
-
-    <section class="advantages">
-
-        <div class="container">
-
-            <div class="section-title">
-
-                <h2>Почему выбирают нас</h2>
-
-            </div>
-
-            <div class="advantages-grid">
-
-                <div class="advantage">
-
-                    <i class="fa-solid fa-clock"></i>
-
-                    <h3>Быстро</h3>
-
-                    <p>
-                        Выполняем работу точно в срок.
-                    </p>
-
-                </div>
-
-                <div class="advantage">
-
-                    <i class="fa-solid fa-shield"></i>
-
-                    <h3>Надежно</h3>
-
-                    <p>
-                        Гарантируем качество выполненных работ.
-                    </p>
-
-                </div>
-
-                <div class="advantage">
-
-                    <i class="fa-solid fa-thumbs-up"></i>
-
-                    <h3>Профессионально</h3>
-
-                    <p>
-                        Индивидуальный подход к каждому клиенту.
-                    </p>
-
-                </div>
-
-                <div class="advantage">
-
-                    <i class="fa-solid fa-headset"></i>
-
-                    <h3>Поддержка</h3>
-
-                    <p>
-                        Всегда остаемся на связи.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ========================= -->
-    <!-- ЗАЯВКА -->
-    <!-- ========================= -->
-
-    <section id="contact" class="contact">
-
-        <div class="container">
-
-            <div class="section-title">
-
-                <h2>Оставить заявку</h2>
+                <h3>Надежно</h3>
 
                 <p>
-                    Заполните форму и мы свяжемся с вами в ближайшее время.
+                    Гарантируем качество выполненных работ.
                 </p>
 
             </div>
 
-            <form class="contact-form">
+            <div class="advantage">
 
-                <input type="text" placeholder="Ваше имя" required>
+                <i class="fa-solid fa-thumbs-up"></i>
 
-                <input type="tel" placeholder="Номер телефона" required>
+                <h3>Профессионально</h3>
 
-                <input type="email" placeholder="Email">
+                <p>
+                    Индивидуальный подход к каждому клиенту.
+                </p>
 
-                <textarea rows="6" placeholder="Ваше сообщение"></textarea>
+            </div>
 
-                <button type="submit">
+            <div class="advantage">
 
-                    Отправить заявку
+                <i class="fa-solid fa-headset"></i>
 
-                </button>
+                <h3>Поддержка</h3>
 
-            </form>
+                <p>
+                    Всегда остаемся на связи.
+                </p>
+
+            </div>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- ЗАЯВКА -->
+<!-- ========================= -->
+
+<section id="contact" class="contact">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Оставить заявку</h2>
+
+            <p>
+                Заполните форму и мы свяжемся с вами в ближайшее время.
+            </p>
+
+        </div>
+
+        <form class="contact-form">
+
+            <input type="text" placeholder="Ваше имя" required>
+
+            <input type="tel" placeholder="Номер телефона" required>
+
+            <input type="email" placeholder="Email">
+
+            <textarea rows="6" placeholder="Ваше сообщение"></textarea>
+
+            <button type="submit">
+
+                Отправить заявку
+
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
 
 </main>
 {% endblock %}

@@ -253,3 +253,34 @@ if (copy) {
     copy.innerHTML = `© ${new Date().getFullYear()} Все права защищены.`;
 
 }
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const phoneInput = document.getElementById("phone");
+    const error = document.getElementById("phone-error");
+
+    const regex = /^\+994(50|51|55|70|77|99|10)\d{7}$/;
+
+    phoneInput.addEventListener("input", function () {
+
+        const value = this.value.trim();
+
+        if (value === "") {
+            this.classList.remove("valid", "invalid");
+            error.textContent = "";
+            return;
+        }
+
+        if (regex.test(value)) {
+            this.classList.remove("invalid");
+            this.classList.add("valid");
+            error.textContent = "";
+        } else {
+            this.classList.remove("valid");
+            this.classList.add("invalid");
+            error.textContent = "Telefon nömrəsi düzgün deyil.";
+        }
+    });
+
+});

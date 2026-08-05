@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crm.apps.CrmConfig',
+    'phonenumber_field',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [

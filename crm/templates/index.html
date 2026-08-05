@@ -169,22 +169,19 @@
 
         </div>
 
-        <form class="contact-form">
+        <form method="post" class="contact-form">
+            {% csrf_token %}
 
-            <input type="text" placeholder="Ваше имя" required>
+            {{ form.order_name }}
 
-            <input type="tel" placeholder="Номер телефона" required>
+            {{ form.order_phone }}
+            <small id="phone-error" class="error"></small>
 
-            <input type="email" placeholder="Email">
-
-            <textarea rows="6" placeholder="Ваше сообщение"></textarea>
+            {{ form.order_desc }}
 
             <button type="submit">
-
                 Отправить заявку
-
             </button>
-
         </form>
 
     </div>

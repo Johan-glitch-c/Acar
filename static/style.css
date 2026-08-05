@@ -1107,3 +1107,43 @@ RESPONSIVE
     }
 
 }
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+
+
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 18px 24px;
+    border-radius: 18px;
+    border: 2px solid transparent;
+    outline: none;
+    transition: .3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #4f7cff;
+}
+
+.invalid {
+    border-color: #ff4d4f !important;
+    box-shadow: 0 0 10px rgba(255, 77, 79, .25);
+}
+
+.valid {
+    border-color: #22c55e !important;
+    box-shadow: 0 0 10px rgba(34, 197, 94, .25);
+}
+
+.error {
+    display: block;
+    margin-top: 8px;
+    color: #ff4d4f;
+    font-size: 14px;
+    min-height: 20px;
+}

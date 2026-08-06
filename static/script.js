@@ -260,7 +260,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const phoneInput = document.getElementById("phone");
     const error = document.getElementById("phone-error");
 
-    const regex = /^\+994(50|51|55|70|77|99|10)\d{7}$/;
+    const regex = /^(?:\+994|0)(10|50|51|55|70|77|99)\d{7}$/;
 
     phoneInput.addEventListener("input", function () {
 

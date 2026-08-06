@@ -38,7 +38,7 @@ class Cms(models.Model):
 
 class Service(models.Model):
     title=models.CharField(max_length=60, verbose_name='Title')
-    desc=models.TextField(max_length=100, verbose_name='Description')
+    desc=models.TextField(max_length=200, verbose_name='Description')
     image=models.ImageField(upload_to='service_images/', verbose_name='Image')
 
     def __str__(self):

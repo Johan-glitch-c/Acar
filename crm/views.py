@@ -3,7 +3,7 @@ from .models import  Order, Cms, Service
 from .forms import OrderForm
 def index(request):
     images = Cms.objects.all()
-    sevices = Service.objects.all()
+    services = Service.objects.all()
 
     if request.method == 'POST':
         form = OrderForm(request.POST)
@@ -15,7 +15,7 @@ def index(request):
         form = OrderForm()
 
     context = {'images': images,
-               'services': sevices,
+               'services': services,
                'form':form}
     return render(request, 'index.html',context)
 
@@ -25,3 +25,6 @@ def index(request):
 
 def thanks(request):
     return render(request, 'thanks.html')
+
+def page_404(request, exception):
+    return render(request, '404.html')

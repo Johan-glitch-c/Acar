@@ -16,11 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from crm.views import index,thanks
+from crm.views import index,thanks,page_404
 from django.conf import settings
 from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
     path('thanks/', thanks, name='thanks'),
+    path('404/', page_404, name='404'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

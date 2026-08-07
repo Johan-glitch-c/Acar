@@ -3,17 +3,15 @@
 {% load static %}
 
 
-
 {% block content %}
-{%include 'carusel.html'%}
-<!-- ========================= -->
-<!-- УСЛУГИ -->
-<!-- ========================= -->
 
-{%include 'services.html'%}
+{% include 'carusel.html' %}
+
+{% include 'services.html' %}
+
 
 <!-- ========================= -->
-<!-- ПРЕИМУЩЕСТВА -->
+<!-- ÜSTÜNLÜKLƏRİMİZ -->
 <!-- ========================= -->
 
 <section class="advantages">
@@ -22,7 +20,11 @@
 
         <div class="section-title">
 
-            <h2>Почему выбирают нас</h2>
+            <h2>Niyə bizi seçirlər?</h2>
+
+            <p>
+                Müştərilərimizə sürətli, keyfiyyətli və etibarlı xidmət göstəririk.
+            </p>
 
         </div>
 
@@ -32,46 +34,49 @@
 
                 <i class="fa-solid fa-clock"></i>
 
-                <h3>Быстро</h3>
+                <h3>Sürətli xidmət</h3>
 
                 <p>
-                    Выполняем работу точно в срок.
+                    Sifarişlərinizi qısa müddətdə və vaxtında həyata keçiririk.
                 </p>
 
             </div>
+
 
             <div class="advantage">
 
                 <i class="fa-solid fa-shield"></i>
 
-                <h3>Надежно</h3>
+                <h3>Etibarlı xidmət</h3>
 
                 <p>
-                    Гарантируем качество выполненных работ.
+                    İşlərimizi keyfiyyətli və etibarlı şəkildə yerinə yetiririk.
                 </p>
 
             </div>
+
 
             <div class="advantage">
 
                 <i class="fa-solid fa-thumbs-up"></i>
 
-                <h3>Профессионально</h3>
+                <h3>Peşəkar yanaşma</h3>
 
                 <p>
-                    Индивидуальный подход к каждому клиенту.
+                    Hər bir müştəriyə fərdi və peşəkar yanaşma göstəririk.
                 </p>
 
             </div>
+
 
             <div class="advantage">
 
                 <i class="fa-solid fa-headset"></i>
 
-                <h3>Поддержка</h3>
+                <h3>Daimi dəstək</h3>
 
                 <p>
-                    Всегда остаемся на связи.
+                    Suallarınız və müraciətləriniz üçün hər zaman bizimlə əlaqə saxlaya bilərsiniz.
                 </p>
 
             </div>
@@ -82,8 +87,9 @@
 
 </section>
 
+
 <!-- ========================= -->
-<!-- ЗАЯВКА -->
+<!-- ƏLAQƏ / MÜRACİƏT -->
 <!-- ========================= -->
 
 <section id="contact" class="contact">
@@ -92,35 +98,37 @@
 
         <div class="section-title">
 
-            <h2>Оставить заявку</h2>
+            <h2>Müraciət göndərin</h2>
 
             <p>
-                Заполните форму и мы свяжемся с вами в ближайшее время.
+                Formanı doldurun, sizinlə ən qısa zamanda əlaqə saxlayacağıq.
             </p>
 
         </div>
 
+
         <form method="post" class="contact-form">
+
             {% csrf_token %}
 
             {{ form.order_name }}
 
             {{ form.order_phone }}
+
             <small id="phone-error" class="error"></small>
 
             {{ form.order_desc }}
 
+
             <button type="submit">
-                Отправить заявку
+                Müraciət göndər
             </button>
+
         </form>
 
     </div>
 
 </section>
 
-</main>
+
 {% endblock %}
-<!-- ========================= -->
-<!-- FOOTER -->
-<!-- ========================= -->

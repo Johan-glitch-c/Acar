@@ -23,5 +23,13 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
     path('thanks/', thanks, name='thanks'),
-    path('404/', page_404, name='404'),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] 
+
+if settings.DEBUG:
+    urlpatterns += static(
+        settings.MEDIA_URL,
+        document_root=settings.MEDIA_ROOT
+    )
+
+
+handler404 = 'crm.views.page_404'

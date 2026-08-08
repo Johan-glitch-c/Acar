@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'crm.apps.CrmConfig',
     'phonenumber_field',
     'widget_tweaks',
+    'telebot.apps.TelebotConfig',
 ]
 
 MIDDLEWARE = [

@@ -20,7 +20,7 @@ from crm.views import index,thanks,page_404
 from django.conf import settings
 from django.conf.urls.static import static
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('acarsecretpanel/', admin.site.urls),
     path('', index, name='index'),
     path('thanks/', thanks, name='thanks'),
 ] 

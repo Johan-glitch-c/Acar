@@ -1,35 +1,53 @@
-import request
-from .models import TeleSettings
+import requests
+
+from .models import TeleBotSettings
 
 
-def sendTelegram(tg_name,tg_phone):
-    if TeleSettings.objects.get(pk=1):
-        settings = TeleSettings.objects.get(pk=1)
+def sendTelegram(tg_name, tg_phone, tg_desc):
+
+    try:
+        settings = TeleBotSettings.objects.get(pk=1)
+
         token = str(settings.token)
         chat_id = str(settings.chat_id)
         text = str(settings.message)
-        api = 'https://api.telegram.org/bot'
-        method = api + token + '/sendMessage'
 
-        if text.find("{") and text.find("}") and text.rfind("{") and text.rfind("}"):
-            part_1 = text[0:text.find('{')]
-            part_2 = text[text.find('}') + 1:text.rfind('{')]
+        # Приводим значения к строке
+        tg_name = str(tg_name)
+        tg_phone = str(tg_phone)
+        tg_desc = str(tg_desc)
 
-            text_slise = part_1 + tg_name + part_2 + tg_phone
-        else:
-            text_slise=text
+        # Имя
+        text = text.replace("{ name }", tg_name)
+        text = text.replace("{name}", tg_name)
 
-        try:
-            req = requests.post(method, data={'chat_id': chat_id,
-                                              'text': text_slise, })
-        except:
-            pass
-        finally:
-            if req.status_code != 200:
-                print("Error sending telegram message")
-            elif req.status_code == 500:
-                print("Error 500")
-            else:
-                print("Everything went fine")
-    else:
-        pass
+        # Телефон
+        text = text.replace("{ phone }", tg_phone)
+        text = text.replace("{phone}", tg_phone)
+
+        # Описание
+        text = text.replace("{ description }", tg_desc)
+        text = text.replace("{description}", tg_desc)
+
+        api = "https://api.telegram.org/bot"
+        method = api + token + "/sendMessage"
+
+        response = requests.post(
+            method,
+            data={
+                "chat_id": chat_id,
+                "text": text,
+            },
+            timeout=10
+        )
+
+        if response.status_code == 200:
+            print("Telegram message sent successfully")
+            return True
+
+        print("Telegram error:", response.text)
+        return False
+
+    except Exception as e:
+        print("Telegram error:", e)
+        return False

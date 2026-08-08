@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from .models import  Order, Cms, Service
 from .forms import OrderForm
+from telebot.sendmessage import sendTelegram
 def index(request):
     images = Cms.objects.all().order_by('id')
     services = Service.objects.all()
@@ -8,7 +9,10 @@ def index(request):
     if request.method == 'POST':
         form = OrderForm(request.POST)
         if form.is_valid():
-            form.save()
+            order = form.save()
+
+            sendTelegram(order.order_name, str(order.order_phone), order.order_desc)
+
             return redirect('thanks')
 
     else:
